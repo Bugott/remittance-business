@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: test-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 113.106.111.75:5086
+      config:
+        server-addr: 113.106.111.75:5086
