@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: gateway-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 113.106.111.75:5086
+      config:
+        server-addr: 113.106.111.75:5086
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: test-router
+          uri: lb://test-service
+          predicates:
+            - Path=/record/**
