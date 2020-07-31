@@ -1,4 +1,4 @@
 package com.zh2.training.infrastructure.repository;
 
-public interface AgentBankMapper {
+public class MessageRepositoryImpl {
 }
