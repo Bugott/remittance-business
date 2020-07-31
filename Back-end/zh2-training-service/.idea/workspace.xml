@@ -29,6 +29,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -43,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
@@ -137,6 +141,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596098185166" />
+    <state x="280" y="4" key="CommitChangelistDialog2" timestamp="1596205979034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="280" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596205979034" />
     <state x="585" y="310" key="FileChooserDialogImpl" timestamp="1595987413711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -161,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596199589997" />
-    <state x="623" y="271" key="com.intellij.ide.util.TipDialog" timestamp="1596202129589">
+    <state x="623" y="271" key="com.intellij.ide.util.TipDialog" timestamp="1596205909988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="623" y="271" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596202129589" />
+    <state x="623" y="271" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596205909988" />
     <state x="174" y="170" key="new project wizard" timestamp="1595987465761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
