@@ -8,7 +8,23 @@ import java.util.HashMap;
 
 public class testMessageGenerateAppServiceImpl {
     public static void main(String[] args) {
-        String regex = "\\{1:\\w{3}[A-Z]{12}[0-9]{10}\\}" +
+        Message message = new Message();
+        message.create("{1:F01ICBKCNBJAXXX0001161255}" +
+                "{2:O1031924200721BOFAUS3NXXXX00012007212007211924N}" +
+                "{4:\n" +
+                ":20:CWHZ202007211924\n" +
+                ":23B:CRED\n" +
+                ":50K:/1234\n" +
+                "SMITH,BEIJING\n" +
+                ":52A:BOFAUS2R888\n" +
+                ":56A:BKCHCNSZSZN\n" +
+                ":57A:BKCHHKHKXXX\n" +
+                ":59:/2224\n" +
+                "POLLY,HONGKONG\n" +
+                ":71A:OUR\n" +
+                "}");
+        
+        /*String regex = "\\{1:\\w{3}[A-Z]{12}[0-9]{10}\\}" +
                 "\\{2:\\w{47}\\}" +
                 "\\{4:\\s" +
                 ":20:\\w{16}\\s" +
@@ -81,7 +97,7 @@ public class testMessageGenerateAppServiceImpl {
         String debitorInformation = arr[message_length-2];
         //付款方式
         String payMethod = arr[message_length-1].substring(5);
-        System.out.println(aimBank);
+        System.out.println(aimBank);*/
 
 
 

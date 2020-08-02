@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Data
 public class Message {
-
-    private static MessageHandleService messageHandleService;
     private String ourBankBiccode;
     private String sourceBankBiccode;
     private String payBank;
@@ -24,6 +22,7 @@ public class Message {
     Debitor debitor;
 
     public static Message create(String messageStr){
+        MessageHandleService messageHandleService = new MessageHandleService();
         String regex = "\\{1:\\w{3}[A-Z]{12}[0-9]{10}\\}" +
                 "\\{2:\\w{47}\\}" +
                 "\\{4:\\s" +
@@ -45,21 +44,25 @@ public class Message {
 
         if (message_length == 13){
             System.out.println("52项和56项均有，下一手银行为56项");
-            messageHandleService.bothMethod(messageArr);
+            Message messageResult = messageHandleService.bothMethod(messageArr);
+            return messageResult;
         }else if (message_length == 11){
             System.out.println("52项和56项均没有，下一手银行为57项");
-            messageHandleService.neitherMethod(messageArr);
+            Message messageResult = messageHandleService.neitherMethod(messageArr);
+            return messageResult;
         }else{
             System.out.println("52项和56项只含有一个");
             String flag = messageArr[7].substring(1,3);
             if (flag.equals("52")){
                 System.out.println("仅含有52项，下一手银行为57项");
-                messageHandleService.fiftyTwoMethod(messageArr);
+                Message messageResult = messageHandleService.fiftyTwoMethod(messageArr);
+                return messageResult;
             }else {
                 System.out.println("仅含有56项，下一手银行为56项");
-                messageHandleService.fiftySixMethod(messageArr);
+                Message messageResult = messageHandleService.fiftySixMethod(messageArr);
+                return messageResult;
             }
         }
-        return null;
+
     }
 }

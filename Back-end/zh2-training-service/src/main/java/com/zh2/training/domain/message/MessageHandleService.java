@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  */
 public class MessageHandleService {
-    @Autowired
-    Message message;
-    @Autowired
-    Creditor creditor;
-    @Autowired
-    Debitor debitor;
 
-    public void analyse(String messageStr){
+    Message message = new Message();
+
+    Creditor creditor = new Creditor();
+
+    Debitor debitor = new Debitor();
+
+    public Message analyse(String messageStr){
         Message message = Message.create(messageStr);//解析swift简电
-
+        return message;
     }
 
     //52项，56项均存在的处理方法
