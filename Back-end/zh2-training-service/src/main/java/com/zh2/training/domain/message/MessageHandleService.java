@@ -29,7 +29,7 @@ public class MessageHandleService {
         String partTwo = messageArr[1];
         String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
-        String creditorAccountNumber = messageArr[5];
+        String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
         //52项付款行(可能为空)
         String payBank = messageArr[7].substring(5);
@@ -71,7 +71,7 @@ public class MessageHandleService {
         String partTwo = messageArr[1];
         String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
-        String creditorAccountNumber = messageArr[5];
+        String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
         //57项收款行
         String aimBank = messageArr[message_length-4].substring(5);
@@ -107,7 +107,7 @@ public class MessageHandleService {
         String partTwo = messageArr[1];
         String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
-        String creditorAccountNumber = messageArr[5];
+        String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
         //52项付款行(可能为空)
         String payBank = messageArr[7].substring(5);
@@ -146,7 +146,7 @@ public class MessageHandleService {
         String partTwo = messageArr[1];
         String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
-        String creditorAccountNumber = messageArr[5];
+        String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
         //56项中间行(可能为空)
         String middleBank = messageArr[message_length-5].substring(5);

@@ -37,11 +37,12 @@ public class Message {
                 "[a-zA-Z]+,[a-zA-Z]+\\s" +
                 ":71A:\\w+\\s\\}";
         if(!messageStr.matches(regex)){
+            System.out.println("简电格式错误，请检查！");
             return null;
         }
         String []messageArr = messageStr.split("\\}|\\n");
         int message_length = messageArr.length;
-
+        System.out.println(message_length);
         if (message_length == 13){
             System.out.println("52项和56项均有，下一手银行为56项");
             Message messageResult = messageHandleService.bothMethod(messageArr);
@@ -51,7 +52,6 @@ public class Message {
             Message messageResult = messageHandleService.neitherMethod(messageArr);
             return messageResult;
         }else{
-            System.out.println("52项和56项只含有一个");
             String flag = messageArr[7].substring(1,3);
             if (flag.equals("52")){
                 System.out.println("仅含有52项，下一手银行为57项");
