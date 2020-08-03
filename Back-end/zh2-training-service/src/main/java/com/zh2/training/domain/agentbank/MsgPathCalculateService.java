@@ -28,14 +28,14 @@ public class MsgPathCalculateService {
         ArrayList<LinkedList<AgentBank>> candidatePaths = new ArrayList<>();
         //根据权值排序
         paths.sort((path1, path2) -> {
-            double path1Weight = 0, path2Weight = 0;
+            int path1Weight = 0, path2Weight = 0;
             for (AgentBank agentBank : path1) {
-                path1Weight += agentBank.getCost() * 0.8 + agentBank.getRequiredTime() * 0.2;
+                path1Weight += agentBank.getCost() * 8 + agentBank.getRequiredTime() * 2;
             }
             for (AgentBank agentBank : path2) {
-                path2Weight += agentBank.getCost() * 0.8 + agentBank.getRequiredTime() * 0.2;
+                path2Weight += agentBank.getCost() * 8 + agentBank.getRequiredTime() * 2;
             }
-            return (int) (path1Weight-path2Weight);
+            return path1Weight-path2Weight;
         });
         return candidatePaths;
     }
