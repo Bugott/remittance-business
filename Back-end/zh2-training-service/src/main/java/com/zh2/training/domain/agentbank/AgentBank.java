@@ -2,11 +2,13 @@ package com.zh2.training.domain.agentbank;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author Bugott
  */
 @Data
-public class AgentBank {
+public class AgentBank implements Serializable {
 
     private int id;
     //被代理行BIC
@@ -21,5 +23,8 @@ public class AgentBank {
     private int requiredTime;
 
     public AgentBank() {
+    }
+    public AgentBank(String agentBank) {
+        this.agentBank = agentBank;
     }
 }
