@@ -1,4 +1,4 @@
 package com.zh2.training.domain.agentbank;
 
-public class AgentBankRepository {
+public interface AgentBankRepository {
 }

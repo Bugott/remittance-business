@@ -16,9 +16,7 @@ public class Message {
     private String middleBank;
     private String payMethod;
     private String aimBank;
-    @Autowired
     Creditor creditor;
-    @Autowired
     Debitor debitor;
 
     public static Message create(String messageStr){

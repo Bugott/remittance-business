@@ -1,4 +1,6 @@
 package com.zh2.training.infrastructure.client;
 
-public class NameAdressSplitClientImpl {
+import com.zh2.training.domain.message.NameAddressSplitClient;
+
+public class NameAdressSplitClientImpl implements NameAddressSplitClient {
 }

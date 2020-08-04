@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Author Phoenix
  *
  */
+
 public class MessageHandleService {
 
     Message message = new Message();
-
-    Creditor creditor = new Creditor();
-
+    Creditor creditor = new Creditor() ;
     Debitor debitor = new Debitor();
 
     public Message analyse(String messageStr){
