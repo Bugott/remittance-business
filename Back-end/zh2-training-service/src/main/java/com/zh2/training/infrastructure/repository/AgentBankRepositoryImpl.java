@@ -18,28 +18,49 @@ public class AgentBankRepositoryImpl implements AgentBankRepository {
 
     @Override
     public ArrayList<LinkedList<AgentBank>> retrieve(String principalBank, String agentBank, int limit) {
-        ArrayList<LinkedList<AgentBank>> candidatePath = new ArrayList<>();
-        getPath(candidatePath, principalBank, agentBank, 1, limit);
-        return candidatePath;
+        ArrayList<LinkedList<AgentBank>> candidatePaths = new ArrayList<>();
+        //拿到下一手代理行列表
+        List<AgentBank> agentBanks = getAgentBanksByPrincipalBank(principalBank);
+        //若没有代理行，则返回空
+        if (agentBanks == null || agentBanks.size() == 0) {
+            return null;
+        }
+        //对代理行列表中的各个代理行搜索可能路径
+        for (AgentBank bank : agentBanks) {
+            LinkedList<AgentBank> path = new LinkedList<>();
+            path.addLast(bank);
+            getPath(candidatePaths, path, agentBank, 1, limit);
+        }
+        return candidatePaths;
     }
 
 
     @Override
-    public void getPath(ArrayList<LinkedList<AgentBank>> candidatePath, String principalBank, String agentBank, int depth, int limit) {
+    public void getPath(ArrayList<LinkedList<AgentBank>> candidatePaths, LinkedList<AgentBank> path, String agentBank, int depth, int limit) {
         if (depth > limit) {
             return;
         }
+        if (path.getLast().getAgentBank().equals(agentBank)) {
+            LinkedList<AgentBank> workablePath = new LinkedList<>();
+            for (AgentBank bank : path) {
+                workablePath.addLast(bank);
+            }
+            candidatePaths.add(workablePath);
+            return;
+        }
+        List<AgentBank> agentBanks = getAgentBanksByPrincipalBank(path.getLast().getAgentBank());
+        for (AgentBank bank : agentBanks) {
+            path.addLast(bank);
+            getPath(candidatePaths, path, agentBank, ++depth, limit);
+            depth--;
+            path.remove(bank);
+        }
+    }
+
+    @Override
+    public List<AgentBank> getAgentBanksByPrincipalBank(String principalBank) {
         Map<String, Object> columnMap = new HashMap<>(2);
         columnMap.put("principal_bank", principalBank);
-        List<AgentBank> principalBanks = agentBankMapper.selectByMap(columnMap);
-        for (AgentBank bank : principalBanks) {
-            if (bank.getAgentBank().equals(agentBank)) {
-                LinkedList<AgentBank> path = new LinkedList<>();
-                path.add(bank);
-                candidatePath.add(path);
-            } else {
-                getPath(candidatePath, bank.getAgentBank(), agentBank, ++depth, limit);
-            }
-        }
+        return agentBankMapper.selectByMap(columnMap);
     }
 }

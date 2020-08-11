@@ -12,6 +12,7 @@ public class MessageGenerateAppServiceImpl {
     //拆解swift报文服务
     public static void main(String[] args) {
         MessageHandleService messageHandleService = new MessageHandleService();
+//        MsgPathCalculateService msgPathCalculateService = new MsgPathCalculateService();
         Message result = messageHandleService.analyse("{1:F01ICBKCNBJAXXX0001161255}" +
                 "{2:O1031924200721BOFAUS3NXXXX00012007212007211924N}" +
                 "{4:\n" +
@@ -26,6 +27,7 @@ public class MessageGenerateAppServiceImpl {
                 "POLLY,HONGKONG\n" +
                 ":71A:OUR\n" +
                 "}");
+//        msgPathCalculateService.calculate(result);
         System.out.println(result);
     }
 }

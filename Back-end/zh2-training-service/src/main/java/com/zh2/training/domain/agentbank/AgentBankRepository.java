@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Bugott
@@ -17,5 +18,7 @@ public interface AgentBankRepository {
      */
     ArrayList<LinkedList<AgentBank>> retrieve(String principalBank, String agentBank, int limit);
 
-    void getPath(ArrayList<LinkedList<AgentBank>> candidatePath, String principalBank, String agentBank, int depth, int limit);
+    void getPath(ArrayList<LinkedList<AgentBank>> candidatePath, LinkedList<AgentBank> path, String agentBank, int depth, int limit);
+
+    List<AgentBank> getAgentBanksByPrincipalBank(String principalBank);
 }
