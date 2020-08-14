@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b57d2ddc-4b24-4f10-8148-f522ee3bfcdd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/config/DruidConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/application/service/MessageGenerateAppServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/application/service/MessageGenerateAppServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/Debitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/Debitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/MessageHandleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/MessageHandleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/NameAddressSplitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/NameAddressSplitClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/infrastructure/client/NameAdressSplitClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/infrastructure/client/NameAdressSplitClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh2/training/infrastructure/repository/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh2/training/infrastructure/repository/MessageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/zh2/training/infrastructure/repository/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/zh2/training/infrastructure/repository/MessageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/MessageHandleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/MessageHandleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/NameAddressSplitClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh2/training/domain/message/NameAddressSplitClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zh2/training/infrastructure/client/NameAdressSplitClientImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh2/training/infrastructure/client/NameAdressSplitClientImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zh2/training/infrastructure/repository/MessageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh2/training/infrastructure/repository/MessageMapper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +41,14 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="zh2-training-service" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,14 +73,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zh2.training.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA codes\Intelligent Path\remittance-business\Back-end\zh2-training-service\src\main\resources" />
       <recent name="D:\IDEA codes\Intelligent Path\src\main" />
     </key>
   </component>
@@ -147,7 +172,33 @@
       <workItem from="1596287304714" duration="1807000" />
       <workItem from="1596289141661" duration="2013000" />
       <workItem from="1596351293631" duration="1678000" />
-      <workItem from="1596353020385" duration="1267000" />
+      <workItem from="1596353020385" duration="1922000" />
+      <workItem from="1596367567998" duration="1759000" />
+      <workItem from="1596423408962" duration="684000" />
+      <workItem from="1596424127436" duration="1009000" />
+      <workItem from="1596455259036" duration="1535000" />
+      <workItem from="1596457272201" duration="1263000" />
+      <workItem from="1596544773568" duration="1208000" />
+      <workItem from="1596551176826" duration="1400000" />
+      <workItem from="1596631983907" duration="696000" />
+      <workItem from="1596635601916" duration="1420000" />
+      <workItem from="1596680486244" duration="857000" />
+      <workItem from="1596684079132" duration="336000" />
+      <workItem from="1596697037308" duration="1007000" />
+      <workItem from="1596976420502" duration="1776000" />
+      <workItem from="1596978244759" duration="689000" />
+      <workItem from="1597201438866" duration="1659000" />
+      <workItem from="1597232935577" duration="972000" />
+      <workItem from="1597235627928" duration="1320000" />
+      <workItem from="1597286583066" duration="523000" />
+      <workItem from="1597287137345" duration="1706000" />
+      <workItem from="1597304861901" duration="882000" />
+      <workItem from="1597386446563" duration="1615000" />
+      <workItem from="1597388235803" duration="1773000" />
+      <workItem from="1597396058601" duration="1480000" />
+      <workItem from="1597406635816" duration="1777000" />
+      <workItem from="1597410424950" duration="1728000" />
+      <workItem from="1597412453596" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;报文简电拆分&quot;">
       <created>1596206026947</created>
@@ -177,7 +228,28 @@
       <option name="project" value="LOCAL" />
       <updated>1596354120301</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;报文简电拆分功能&quot;">
+      <created>1596354304345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596354304345</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&quot;报文简电拆分功能&quot;">
+      <created>1596369095220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596369095220</updated>
+    </task>
+    <task id="LOCAL-00007" summary="&quot;报文拆分功能-引入mybatis&quot;">
+      <created>1596551576423</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596551576423</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,69 +258,78 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;报文简电拆分&quot;" />
     <MESSAGE value="&quot;报文简电拆分功能&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;报文简电拆分功能&quot;" />
+    <MESSAGE value="&quot;报文拆分功能-引入mybatis&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;报文拆分功能-引入mybatis&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Project_Structure" timestamp="1596203840091">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1597407865753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1596203840091" />
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1597407865753" />
+    <state x="361" y="71" key="#SQL_Dialects" timestamp="1596977549199">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1596977549199" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596976706395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596976706395" />
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser" timestamp="1596098185166">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596098185166" />
-    <state x="306" y="48" width="1080" height="771" key="CommitChangelistDialog2" timestamp="1596354118841">
+    <state x="306" y="48" width="1080" height="771" key="CommitChangelistDialog2" timestamp="1596551572197">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="306" y="48" width="1080" height="771" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596354118841" />
+    <state x="306" y="48" width="1080" height="771" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596551572197" />
     <state x="585" y="310" key="FileChooserDialogImpl" timestamp="1595987413711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="585" y="310" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595987413711" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1596353061720">
+    <state width="1493" height="205" key="GridCell.Tab.0.bottom" timestamp="1597411967302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596353061720" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1596353061720">
+    <state width="1493" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597411967302" />
+    <state width="1493" height="205" key="GridCell.Tab.0.center" timestamp="1597411967302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596353061720" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1596353061719">
+    <state width="1493" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597411967302" />
+    <state width="1493" height="205" key="GridCell.Tab.0.left" timestamp="1597411967301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596353061719" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1596353061720">
+    <state width="1493" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597411967301" />
+    <state width="1493" height="205" key="GridCell.Tab.0.right" timestamp="1597411967302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596353061720" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1596352168972">
+    <state width="1493" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597411967302" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1596544978426">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596352168972" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1596352168972">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596544978426" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1596544978426">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596352168972" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1596352168972">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596544978426" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1596544978426">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596352168972" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1596352168972">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596544978426" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1596544978426">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596352168972" />
-    <state x="230" y="0" key="SettingsEditor" timestamp="1596289248540">
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596544978426" />
+    <state x="230" y="0" key="SettingsEditor" timestamp="1597407845241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="230" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596289248540" />
-    <state x="378" y="193" key="Vcs.Push.Dialog.v2" timestamp="1596354145322">
+    <state x="230" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1597407845241" />
+    <state x="378" y="193" key="Vcs.Push.Dialog.v2" timestamp="1596551590748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="378" y="193" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596354145322" />
-    <state x="623" y="271" key="com.intellij.ide.util.TipDialog" timestamp="1596353019375">
+    <state x="378" y="193" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596551590748" />
+    <state x="623" y="271" key="com.intellij.ide.util.TipDialog" timestamp="1597412450531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="623" y="271" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596353019375" />
+    <state x="623" y="271" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1597412450531" />
     <state x="174" y="170" key="new project wizard" timestamp="1595987465761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -261,21 +342,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595767170608" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/MessageHandleService.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zh2/training/domain/message/MessageHandleService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

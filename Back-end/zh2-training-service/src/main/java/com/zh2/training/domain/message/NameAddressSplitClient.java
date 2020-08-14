@@ -1,4 +1,9 @@
 package com.zh2.training.domain.message;
 
-public interface NameAddressSplitClient {
+public class NameAddressSplitClient {
+    public Object split(String information){
+        return null;
+    }
+
+
 }

@@ -4,20 +4,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zh2.training.infrastructure.repository.MessageMapper">
     <!--查询所有-->
-    <select id="findAll" resultType="com.zh2.training.infrastructure.repository.MessageMapper">
-
+    <select id="getAll" resultType="com.zh2.training.infrastructure.repository.MessageMapper">
+        select * from message
+    </select>
+    <!--根据id查询-->
+    <select id="getMessageById" resultType="com.zh2.training.infrastructure.repository.MessageMapper">
+        select * from message where id=#{id}
     </select>
     <!--添加-->
-    <insert id="saveMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
-
+    <insert id="insertMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
+        insert into message(id,ourBankBiccode,sourceBankBiccode,payBank,middleBank,aimBank,payMethod)
+        values(#{id},
+        #{ourBankBiccode},
+        #{sourceBankBiccode},
+        #{payBank},
+        #{middleBank},
+        #{aimBank},
+        #{payMethod})
     </insert>
     <!--更新-->
     <update id="updateMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
-        update user set id = #{id},name = #{name},pwd = #{pwd} where id = #{id}
+        update user set ourBankBiccode = #{ourBankBiccode},
+        sourceBankBiccode = #{sourceBankBiccode},
+         payBank = #{payBank},
+         middleBank = #{middleBank},
+         aimBank = #{aimBank},
+         payMethod = #{payMethod}
+         where id = #{id}
     </update>
     <!--删除-->
-    <delete id="deleteMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
-        delete from user where id = #{uid}
+    <delete id="deleteMessage" parameterType="int">
+        delete from message where id=#{id}
     </delete>
 
 

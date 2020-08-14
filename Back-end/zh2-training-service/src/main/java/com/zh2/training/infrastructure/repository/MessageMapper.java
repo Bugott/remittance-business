@@ -1,10 +1,20 @@
 package com.zh2.training.infrastructure.repository;
 
 import com.zh2.training.domain.message.Message;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
 
-@Mapper
+import java.util.List;
+
+
 public interface MessageMapper {
 
-    public Message getMessageById();
+    public List<Message> getAll();
+
+    public Message getMessageById(Integer id);
+
+    public int deleteMessageById(Integer id);
+
+    public int insertMessage(Message massage);
+
+    public int updateMessage(Message massage);
 }

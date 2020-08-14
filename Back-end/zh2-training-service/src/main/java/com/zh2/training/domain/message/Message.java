@@ -3,6 +3,8 @@ package com.zh2.training.domain.message;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Arrays;
+
 
 /**
  * @Author Phoenix
@@ -39,6 +41,7 @@ public class Message {
             return null;
         }
         String []messageArr = messageStr.split("\\}|\\n");
+        System.out.println(Arrays.toString(messageArr));
         int message_length = messageArr.length;
         System.out.println(message_length);
         if (message_length == 13){

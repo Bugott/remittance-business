@@ -10,5 +10,6 @@
         <module name="zh2-training-stub" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>

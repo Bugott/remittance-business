@@ -8,7 +8,5 @@ import java.io.Serializable;
 public class Debitor implements Serializable {
     private String debitorAccountNumber;
     private String debitorInformation;
-
-
 }
 
