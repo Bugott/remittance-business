@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @Author Phoenix
+ * @author Phoenix
  *
  */
 
@@ -18,9 +18,10 @@ public class MessageHandleService {
 
 
     public Message analyse(String messageStr){
+        NameAddressSplitClient nameAddressSplitClient = new NameAddressSplitClient();
         Message message = Message.create(messageStr);//解析swift简电
-        Debitor debitor = message.debitor;//解析50项
-        Creditor creditor = message.creditor;//解析59项
+        Debitor debitorinformation = (Debitor) nameAddressSplitClient.split(message.getDebitor().getDebitorInformation());//解析50项
+        Creditor creditorinformation = (Creditor) nameAddressSplitClient.split(message.getCreditor().getCreditorInformation());//解析59项
         return message;
 
     }
@@ -96,6 +97,8 @@ public class MessageHandleService {
         message.setSourceBankBiccode(sourceBankBiccode);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
+        message.setMiddleBank("");
+        message.setPayBank("");
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
 
@@ -134,6 +137,7 @@ public class MessageHandleService {
         message.setSourceBankBiccode(sourceBankBiccode);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
+        message.setMiddleBank("");
         message.setPayBank(payBank);
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
@@ -174,6 +178,7 @@ public class MessageHandleService {
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
+        message.setPayBank("");
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
 

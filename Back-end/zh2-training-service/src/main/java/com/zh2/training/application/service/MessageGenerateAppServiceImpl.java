@@ -2,22 +2,29 @@ package com.zh2.training.application.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zh2.training.domain.agentbank.AgentBank;
+import com.zh2.training.domain.agentbank.MsgPathCalculateService;
 import com.zh2.training.domain.message.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 @Controller
 public class MessageGenerateAppServiceImpl {
 
     //拆解swift报文服务
 
-    @RequestMapping("/")
+    @RequestMapping("/show")
     @ResponseBody
     public static void main(String[] args) {
         MessageHandleService messageHandleService = new MessageHandleService();
-        NameAddressSplitClient nameAddressSplitClient = new NameAddressSplitClient();
-        Message result = messageHandleService.analyse( "{1:F01ICBKCNBJAXXX0001161255}" +
+        MsgPathCalculateService msgPathCalculateService = new MsgPathCalculateService();
+
+        Message message = messageHandleService.analyse( "{1:F01ICBKCNBJAXXX0001161255}" +
                 "{2:O1031924200721BOFAUS3NXXXX00012007212007211924N}" +
                 "{4:\n" +
                 ":20:CWHZ202007211924\n" +
@@ -31,11 +38,15 @@ public class MessageGenerateAppServiceImpl {
                 "POLLY,HONGKONG\n" +
                 ":71A:OUR\n" +
                 "}");
-        System.out.println(result);
-        System.out.println(result.getDebitor().getDebitorInformation());
-        System.out.println(result.getCreditor());
-        Debitor debitor = (Debitor) nameAddressSplitClient.split(result.getDebitor().getDebitorInformation());//解析50项
-        Creditor creditor = (Creditor) nameAddressSplitClient.split(result.getCreditor().getCreditorInformation());//解析59项
+        System.out.println(message);
+        System.out.println(message.getDebitor().getDebitorInformation());
+        System.out.println(message.getCreditor());
+
+        //ArrayList<LinkedList<AgentBank>> path = msgPathCalculateService.calculate(message);
+
+        //System.out.println(path);
+
+
         /*
         //JSON映射器
         ObjectMapper mapper = new ObjectMapper();
