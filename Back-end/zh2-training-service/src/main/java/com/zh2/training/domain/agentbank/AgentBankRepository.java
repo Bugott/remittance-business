@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * @author Bugott
+ *
  */
 @Repository
 public interface AgentBankRepository {

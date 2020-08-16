@@ -9,6 +9,7 @@ import java.util.LinkedList;
 
 /**
  * @author Bugott
+ *
  */
 @Service
 public class MsgPathCalculateService {
@@ -39,4 +40,5 @@ public class MsgPathCalculateService {
         System.out.println(paths.toString());
         return paths;
     }
+
 }
