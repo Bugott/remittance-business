@@ -26,6 +26,11 @@ public class MessageHandleService {
 
     }
 
+    /**
+     * 不同情况的处理方法
+     * @param messageArr
+     * @return
+     */
     //52项，56项均存在的处理方法
     public  Message bothMethod(String []messageArr){
         int message_length = messageArr.length;
