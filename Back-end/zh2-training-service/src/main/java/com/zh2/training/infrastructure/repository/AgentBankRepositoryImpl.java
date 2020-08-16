@@ -25,10 +25,11 @@ public class AgentBankRepositoryImpl implements AgentBankRepository {
         if (agentBanks == null || agentBanks.size() == 0) {
             return null;
         }
-        //对代理行列表中的各个代理行搜索可能路径
+        //对代理行列表中的各个代理行搜索可能的后续路径
         for (AgentBank bank : agentBanks) {
             LinkedList<AgentBank> path = new LinkedList<>();
             path.addLast(bank);
+            //调用getPath()方法，内部递归回溯
             getPath(candidatePaths, path, agentBank, 1, limit);
         }
         return candidatePaths;
@@ -37,10 +38,13 @@ public class AgentBankRepositoryImpl implements AgentBankRepository {
 
     @Override
     public void getPath(ArrayList<LinkedList<AgentBank>> candidatePaths, LinkedList<AgentBank> path, String agentBank, int depth, int limit) {
+        //若递归深度参数depth超过limit，则不进行后续递归
         if (depth > limit) {
             return;
         }
+        //判断下一手代理行是否是目标行(可能是中间行/中间行)
         if (path.getLast().getAgentBank().equals(agentBank)) {
+            //如果是，则该路径为可行路径，加入到结果列表中(注意这里需要用到复制而不是引用)
             LinkedList<AgentBank> workablePath = new LinkedList<>();
             for (AgentBank bank : path) {
                 workablePath.addLast(bank);
@@ -48,7 +52,9 @@ public class AgentBankRepositoryImpl implements AgentBankRepository {
             candidatePaths.add(workablePath);
             return;
         }
+        //否则继续查询该代理行的下一手代理行，得出下一手代理行列表
         List<AgentBank> agentBanks = getAgentBanksByPrincipalBank(path.getLast().getAgentBank());
+        //对下一手代理行列表中的各个代理行进行递归回溯
         for (AgentBank bank : agentBanks) {
             path.addLast(bank);
             getPath(candidatePaths, path, agentBank, ++depth, limit);
@@ -59,6 +65,7 @@ public class AgentBankRepositoryImpl implements AgentBankRepository {
 
     @Override
     public List<AgentBank> getAgentBanksByPrincipalBank(String principalBank) {
+        //使用HashMap放入查询条件对数据库表进行查询
         Map<String, Object> columnMap = new HashMap<>(2);
         columnMap.put("principal_bank", principalBank);
         return agentBankMapper.selectByMap(columnMap);

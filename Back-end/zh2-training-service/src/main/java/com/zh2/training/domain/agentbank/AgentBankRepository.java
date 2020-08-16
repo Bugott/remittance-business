@@ -12,13 +12,18 @@ import java.util.List;
 @Repository
 public interface AgentBankRepository {
     /**
-     * 获取代理行
-     *
-     * @return AgentBank
+     * 计算获取最优汇款路径列表主方法
+     * @return ArrayList<LinkedList<AgentBank>>
      */
     ArrayList<LinkedList<AgentBank>> retrieve(String principalBank, String agentBank, int limit);
-
+    /**
+     * 获取所有可行的汇款路径，其中有进行递归以及用到了回溯算法
+     * @return void
+     */
     void getPath(ArrayList<LinkedList<AgentBank>> candidatePath, LinkedList<AgentBank> path, String agentBank, int depth, int limit);
-
+    /**
+     * 已被代理行作为查询条件从数据库表中得到所有能代理其的代理行的相关记录数据
+     * @return List<AgentBank>
+     */
     List<AgentBank> getAgentBanksByPrincipalBank(String principalBank);
 }

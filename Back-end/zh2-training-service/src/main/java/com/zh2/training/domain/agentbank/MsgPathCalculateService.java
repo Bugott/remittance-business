@@ -25,8 +25,7 @@ public class MsgPathCalculateService {
             //中间行不为空时，查找我行与中间行(56项)之间可行的代理清算路径;
             paths = agentBankRepository.retrieve(message.getOurBankBiccode(), message.getMiddleBank(), 3);
         }
-        ArrayList<LinkedList<AgentBank>> candidatePaths = new ArrayList<>();
-        //根据权值排序
+        //使用Lambda表达式，根据权值排序
         paths.sort((path1, path2) -> {
             int path1Weight = 0, path2Weight = 0;
             for (AgentBank agentBank : path1) {
@@ -37,6 +36,7 @@ public class MsgPathCalculateService {
             }
             return path1Weight-path2Weight;
         });
-        return candidatePaths;
+        System.out.println(paths.toString());
+        return paths;
     }
 }
