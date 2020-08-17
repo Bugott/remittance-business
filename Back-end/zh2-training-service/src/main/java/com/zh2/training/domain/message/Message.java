@@ -1,24 +1,32 @@
 package com.zh2.training.domain.message;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.Serializable;
+import java.util.Arrays;
 
 
 /**
- * @Author Phoenix
+ * @author Phoenix
  *
  */
 @Data
-public class Message {
+public class Message implements Serializable {
+    //我行BIC
     private String ourBankBiccode;
+    //来报行BIC
     private String sourceBankBiccode;
+    //付款行
     private String payBank;
+    //中间行
     private String middleBank;
+    //付款方式
     private String payMethod;
+    //收款行
     private String aimBank;
-    @Autowired
+    //债权人（付款人）
     Creditor creditor;
-    @Autowired
+    //债务人（收款人）
     Debitor debitor;
 
     public static Message create(String messageStr){
@@ -41,24 +49,25 @@ public class Message {
             return null;
         }
         String []messageArr = messageStr.split("\\}|\\n");
+        System.out.println(Arrays.toString(messageArr));
         int message_length = messageArr.length;
         System.out.println(message_length);
         if (message_length == 13){
-            System.out.println("52项和56项均有，下一手银行为56项");
+            System.out.println("52项付款行和56项中间行均有");
             Message messageResult = messageHandleService.bothMethod(messageArr);
             return messageResult;
         }else if (message_length == 11){
-            System.out.println("52项和56项均没有，下一手银行为57项");
+            System.out.println("52项付款行和56项中间行均没有");
             Message messageResult = messageHandleService.neitherMethod(messageArr);
             return messageResult;
         }else{
             String flag = messageArr[7].substring(1,3);
             if (flag.equals("52")){
-                System.out.println("仅含有52项，下一手银行为57项");
+                System.out.println("含有52项付款行，不含有56项中间行");
                 Message messageResult = messageHandleService.fiftyTwoMethod(messageArr);
                 return messageResult;
             }else {
-                System.out.println("仅含有56项，下一手银行为56项");
+                System.out.println("含有56项中间行，不含有52项付款行");
                 Message messageResult = messageHandleService.fiftySixMethod(messageArr);
                 return messageResult;
             }
