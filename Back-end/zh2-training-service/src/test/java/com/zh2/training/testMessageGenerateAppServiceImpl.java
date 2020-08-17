@@ -1,4 +1,4 @@
-package com.zh2.training.application.service;
+package com.zh2.training;
 
 import com.zh2.training.domain.message.Message;
 

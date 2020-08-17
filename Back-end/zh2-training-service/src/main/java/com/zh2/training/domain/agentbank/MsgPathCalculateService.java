@@ -9,7 +9,6 @@ import java.util.LinkedList;
 
 /**
  * @author Bugott
- *
  */
 @Service
 public class MsgPathCalculateService {
@@ -17,7 +16,10 @@ public class MsgPathCalculateService {
     @Autowired
     AgentBankRepository agentBankRepository;
 
-    public ArrayList<LinkedList<AgentBank>> calculate(Message message) {
+    @Autowired
+    BankRepository bankRepository;
+
+    public ArrayList<ArrayList<ArrayList<String>>> calculate(Message message) {
         ArrayList<LinkedList<AgentBank>> paths;
         if (message.getMiddleBank() == null || "".equals(message.getMiddleBank())) {
             //中间行为空时，查找我行与收款行(57项)之间可行的代理清算路径;
@@ -35,10 +37,22 @@ public class MsgPathCalculateService {
             for (AgentBank agentBank : path2) {
                 path2Weight += agentBank.getCost() * 8 + agentBank.getRequiredTime() * 2;
             }
-            return path1Weight-path2Weight;
+            return path1Weight - path2Weight;
         });
-        System.out.println(paths.toString());
-        return paths;
+        ArrayList<ArrayList<ArrayList<String>>> finalPaths = new ArrayList<>(4);
+        for (int i = 0; i < 3; i++) {
+            LinkedList<AgentBank> path = paths.get(i);
+            ArrayList<ArrayList<String>> finalPath = new ArrayList<>(8);
+            for (AgentBank agentBank : path) {
+                Bank bank = bankRepository.getBanksByBic(agentBank.getAgentBank());
+                ArrayList<String> tempArray = new ArrayList<>(2);
+                tempArray.add(bank.getCity());
+                tempArray.add(bank.getBic());
+                finalPath.add(i,tempArray);
+            }
+            finalPaths.add(finalPath);
+        }
+        return finalPaths;
     }
 
 }

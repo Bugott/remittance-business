@@ -1,11 +1,12 @@
 package com.zh2.training.domain.message;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author Phoenix
  *
  */
+@Service
 public class MessageHandleService {
 
     Message message = new Message();
