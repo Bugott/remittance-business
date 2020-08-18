@@ -39,16 +39,17 @@ public class MsgPathCalculateService {
             }
             return path1Weight - path2Weight;
         });
+        System.out.println(paths);
         ArrayList<ArrayList<ArrayList<String>>> finalPaths = new ArrayList<>(4);
         for (int i = 0; i < 3; i++) {
             LinkedList<AgentBank> path = paths.get(i);
             ArrayList<ArrayList<String>> finalPath = new ArrayList<>(8);
             for (AgentBank agentBank : path) {
-                Bank bank = bankRepository.getBanksByBic(agentBank.getAgentBank());
+                Bank bank = bankRepository.getBankByBic(agentBank.getAgentBank());
                 ArrayList<String> tempArray = new ArrayList<>(2);
                 tempArray.add(bank.getCity());
                 tempArray.add(bank.getBic());
-                finalPath.add(i,tempArray);
+                finalPath.add(tempArray);
             }
             finalPaths.add(finalPath);
         }

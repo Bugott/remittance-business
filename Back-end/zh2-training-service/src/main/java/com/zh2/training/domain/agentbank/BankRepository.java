@@ -13,5 +13,5 @@ public interface BankRepository {
      * @param bic bic码
      * @return List<AgentBank>
      */
-    Bank getBanksByBic(String bic);
+    Bank getBankByBic(String bic);
 }

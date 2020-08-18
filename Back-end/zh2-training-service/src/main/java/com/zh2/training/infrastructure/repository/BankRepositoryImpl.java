@@ -16,7 +16,7 @@ public class BankRepositoryImpl implements BankRepository {
     BankMapper bankMapper;
 
     @Override
-    public Bank getBanksByBic(String bic) {
+    public Bank getBankByBic(String bic) {
         QueryWrapper<Bank> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(Bank::getBic,bic);
         Bank bank = bankMapper.selectOne(wrapper);

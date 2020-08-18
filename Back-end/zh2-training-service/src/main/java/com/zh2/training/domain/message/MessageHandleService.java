@@ -3,32 +3,41 @@ package com.zh2.training.domain.message;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author Phoenix
+ * @author Phoenix
  *
  */
+
 @Service
 public class MessageHandleService {
 
     Message message = new Message();
-
-    Creditor creditor = new Creditor();
-
+    Creditor creditor = new Creditor() ;
     Debitor debitor = new Debitor();
 
+
     public Message analyse(String messageStr){
+        NameAddressSplitClient nameAddressSplitClient = new NameAddressSplitClient();
         Message message = Message.create(messageStr);//解析swift简电
+        Debitor debitorinformation = (Debitor) nameAddressSplitClient.split(message.getDebitor().getDebitorInformation());//解析50项
+        Creditor creditorinformation = (Creditor) nameAddressSplitClient.split(message.getCreditor().getCreditorInformation());//解析59项
         return message;
+
     }
 
+    /**
+     * 不同情况的处理方法
+     * @param messageArr
+     * @return
+     */
     //52项，56项均存在的处理方法
     public  Message bothMethod(String []messageArr){
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -49,8 +58,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBiccode(ourBankBic);
+        message.setSourceBankBiccode(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
@@ -67,10 +76,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -87,10 +96,12 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBiccode(ourBankBic);
+        message.setSourceBankBiccode(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
+        message.setMiddleBank("");
+        message.setPayBank("");
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
 
@@ -103,10 +114,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -125,10 +136,11 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBiccode(ourBankBic);
+        message.setSourceBankBiccode(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
+        message.setMiddleBank("");
         message.setPayBank(payBank);
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
@@ -142,10 +154,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -164,11 +176,12 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBiccode(ourBankBic);
+        message.setSourceBankBiccode(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
+        message.setPayBank("");
         message.setPayMethod(payMethod);
         message.setAimBank(aimBank);
 
