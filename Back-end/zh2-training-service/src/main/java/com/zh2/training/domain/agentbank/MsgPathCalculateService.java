@@ -18,12 +18,14 @@ public class MsgPathCalculateService {
 
     public ArrayList<LinkedList<AgentBank>> calculate(Message message) {
         ArrayList<LinkedList<AgentBank>> paths;
+        System.out.println("message:"+message);
+        System.out.println("agentBankRepository:"+agentBankRepository);
         if (message.getMiddleBank() == null || "".equals(message.getMiddleBank())) {
             //中间行为空时，查找我行与收款行(57项)之间可行的代理清算路径;
-            paths = agentBankRepository.retrieve(message.getOurBankBiccode(), message.getAimBank(), 4);
+            paths = agentBankRepository.retrieve(message.getOurBankBic(), message.getAimBank(), 4);
         } else {
             //中间行不为空时，查找我行与中间行(56项)之间可行的代理清算路径;
-            paths = agentBankRepository.retrieve(message.getOurBankBiccode(), message.getMiddleBank(), 3);
+            paths = agentBankRepository.retrieve(message.getOurBankBic(), message.getMiddleBank(), 3);
         }
         ArrayList<LinkedList<AgentBank>> candidatePaths = new ArrayList<>();
         //根据权值排序

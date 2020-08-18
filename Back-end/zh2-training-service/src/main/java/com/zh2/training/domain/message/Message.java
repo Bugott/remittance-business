@@ -14,9 +14,9 @@ import java.util.Arrays;
 @Data
 public class Message implements Serializable {
     //我行BIC
-    private String ourBankBiccode;
+    private String ourBankBic;
     //来报行BIC
-    private String sourceBankBiccode;
+    private String sourceBankBic;
     //付款行
     private String payBank;
     //中间行

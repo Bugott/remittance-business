@@ -13,10 +13,10 @@
     </select>
     <!--添加-->
     <insert id="insertMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
-        insert into message(id,ourBankBiccode,sourceBankBiccode,payBank,middleBank,aimBank,payMethod)
+        insert into message(id,ourBankBic,sourceBankBic,payBank,middleBank,aimBank,payMethod)
         values(#{id},
-        #{ourBankBiccode},
-        #{sourceBankBiccode},
+        #{ourBankBic},
+        #{sourceBankBic},
         #{payBank},
         #{middleBank},
         #{aimBank},
@@ -24,8 +24,8 @@
     </insert>
     <!--更新-->
     <update id="updateMessage" parameterType="com.zh2.training.infrastructure.repository.MessageMapper">
-        update user set ourBankBiccode = #{ourBankBiccode},
-        sourceBankBiccode = #{sourceBankBiccode},
+        update user set ourBankBic = #{ourBankBic},
+        sourceBankBic = #{sourceBankBic},
          payBank = #{payBank},
          middleBank = #{middleBank},
          aimBank = #{aimBank},

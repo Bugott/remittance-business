@@ -1,8 +1,6 @@
 package com.zh2.training.domain.message;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author Phoenix
@@ -36,10 +34,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -60,8 +58,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
@@ -78,10 +76,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -98,8 +96,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank("");
@@ -116,10 +114,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -138,8 +136,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank("");
@@ -156,10 +154,10 @@ public class MessageHandleService {
         int message_length = messageArr.length;
         //1开头部分
         String partOne = messageArr[0];
-        String ourBankBiccode = partOne.substring(6,14)+partOne.substring(15,18);
+        String ourBankBic = partOne.substring(6,14)+partOne.substring(15,18);
         //2开头部分
         String partTwo = messageArr[1];
-        String sourceBankBiccode = partTwo.substring(17,25)+partTwo.substring(26,29);
+        String sourceBankBic = partTwo.substring(17,25)+partTwo.substring(26,29);
         //付款人信息
         String creditorAccountNumber = messageArr[5].substring(6);
         String creditorInformation = messageArr[6];
@@ -178,8 +176,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBiccode);
-        message.setSourceBankBiccode(sourceBankBiccode);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
