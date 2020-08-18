@@ -37,17 +37,17 @@ public class Message implements Serializable {
      */
     public static Message create(String messageStr){
         MessageHandleService messageHandleService = new MessageHandleService();
-        String regex = "\\{1:\\w{3}[A-Z]{12}[0-9]{10}\\}" +
+        String regex = "\\{1:\\w{25}\\}" +
                 "\\{2:\\w{47}\\}" +
                 "\\{4:\\s" +
                 ":20:\\w{16}\\s" +
-                ":23B:[A-Z]{4}\\s" +
-                ":50K:/[0-9]{1,34}+\\s" +
+                "(:23B:[A-Z]{4}\\s)?" +
+                ":50K:/\\w+\\s" +
                 "[a-zA-Z]+,[a-zA-Z]+\\s" +
                 "(:52A:\\w{11}\\s)?" +
                 "(:56A:\\w{11}\\s)?" +
                 ":57A:\\w{11}\\s" +
-                ":59:/[0-9]{1,34}+\\s" +
+                ":59:/\\w+\\s" +
                 "[a-zA-Z]+,[a-zA-Z]+\\s" +
                 ":71A:\\w+\\s\\}";
         if(!messageStr.matches(regex)){

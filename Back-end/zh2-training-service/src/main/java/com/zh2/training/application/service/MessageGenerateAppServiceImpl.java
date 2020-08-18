@@ -30,9 +30,7 @@ public class MessageGenerateAppServiceImpl {
         Path path2 = new Path();
         Path path3 = new Path();
         //将简电拆分为Message对象
-        Message message = messageHandleService.analyse( "{1:F01ICBKCNBJAXXX0001161255}" +
-                "{2:O1031924200721BOFAUS3NXXXX00012007212007211924N}" +
-                "{4:\n" +
+        Message message = messageHandleService.analyse( "{1:F01ICBKCNBJAXXX0001161255}{2:O1031924200721BOFAUS3NXXXX00012007212007211924N}{4:\n" +
                 ":20:CWHZ202007211924\n" +
                 ":23B:CRED\n" +
                 ":50K:/1234\n" +
