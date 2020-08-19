@@ -7,7 +7,7 @@ import com.zh2.training.domain.message.MessageHandleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -29,24 +29,12 @@ public class CalculateController {
     @Autowired
     BankRepository bankRepository;
 
-    @PostMapping(path = "/calculate")
-    public ModelMap calculate(@RequestBody String messageStr) {
+    @PostMapping(path = "/calculate",consumes = "application/x-www-form-urlencoded;charset=UTF-8")
+    public ModelMap calculate(@RequestParam(value="message") String messageStr) {
         //初始化结果列表
         ModelMap modelMap = new ModelMap();
         //调用服务拆分报文
-//        Message message = messageHandleService.analyse(messageStr);
-        Message message = messageHandleService.analyse("{1:F01ICBKCNBJ13700001161255}{2:O1031924200721KODBKRSE237000012007212007211924N}{4:\n" +
-                ":20:CWHZ202007211924\n" +
-                ":23B:CRED\n" +
-                ":50K:/1234\n" +
-                "SMITH,BEIJING\n" +
-                ":52A:BNPAFRPA110\n" +
-                ":56A:INGBHOAM100\n" +
-                ":57A:CHASBRBR160\n" +
-                ":59:/2224\n" +
-                "POLLY,HONGKONG\n" +
-                ":71A:OUR\n" +
-                "}");
+        Message message = messageHandleService.analyse(messageStr);
         //调用服务获取排序后的汇款清算路径
         ArrayList<ArrayList<ArrayList<String>>> paths = msgPathCalculateService.calculate(message);
         //循环获取前3条路径
