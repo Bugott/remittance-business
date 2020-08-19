@@ -13,9 +13,9 @@ import java.util.Arrays;
 @Data
 public class Message implements Serializable {
     //我行BIC
-    private String ourBankBiccode;
+    private String ourBankBic;
     //来报行BIC
-    private String sourceBankBiccode;
+    private String sourceBankBic;
     //付款行
     private String payBank;
     //中间行
@@ -29,6 +29,11 @@ public class Message implements Serializable {
     //债务人（收款人）
     Debitor debitor;
 
+    /**
+     * 拆分报文方法
+     * @param messageStr
+     * @return
+     */
     public static Message create(String messageStr){
         MessageHandleService messageHandleService = new MessageHandleService();
         String regex = "\\{1:\\w{25}\\}" +

@@ -16,10 +16,7 @@ public class MessageHandleService {
 
 
     public Message analyse(String messageStr){
-        NameAddressSplitClient nameAddressSplitClient = new NameAddressSplitClient();
         Message message = Message.create(messageStr);//解析swift简电
-        Debitor debitorinformation = (Debitor) nameAddressSplitClient.split(message.getDebitor().getDebitorInformation());//解析50项
-        Creditor creditorinformation = (Creditor) nameAddressSplitClient.split(message.getCreditor().getCreditorInformation());//解析59项
         return message;
 
     }
@@ -58,8 +55,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBic);
-        message.setSourceBankBiccode(sourceBankBic);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);
@@ -96,8 +93,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBic);
-        message.setSourceBankBiccode(sourceBankBic);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank("");
@@ -136,8 +133,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBic);
-        message.setSourceBankBiccode(sourceBankBic);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank("");
@@ -176,8 +173,8 @@ public class MessageHandleService {
         creditor.setCreditorAccountNumber(creditorAccountNumber);
         creditor.setCreditorInformation(creditorInformation);
 
-        message.setOurBankBiccode(ourBankBic);
-        message.setSourceBankBiccode(sourceBankBic);
+        message.setOurBankBic(ourBankBic);
+        message.setSourceBankBic(sourceBankBic);
         message.setCreditor(creditor);
         message.setDebitor(debitor);
         message.setMiddleBank(middleBank);

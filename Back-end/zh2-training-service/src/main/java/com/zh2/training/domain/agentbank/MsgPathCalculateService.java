@@ -21,12 +21,12 @@ public class MsgPathCalculateService {
 
     public ArrayList<ArrayList<ArrayList<String>>> calculate(Message message) {
         ArrayList<LinkedList<AgentBank>> paths;
-        if (message.getMiddleBank() == null || "".equals(message.getMiddleBank())) {
+        if (message.getMiddleBank() == null) {
             //中间行为空时，查找我行与收款行(57项)之间可行的代理清算路径;
-            paths = agentBankRepository.retrieve(message.getOurBankBiccode(), message.getAimBank(), 4);
+            paths = agentBankRepository.retrieve(message.getOurBankBic(), message.getAimBank(), 4);
         } else {
             //中间行不为空时，查找我行与中间行(56项)之间可行的代理清算路径;
-            paths = agentBankRepository.retrieve(message.getOurBankBiccode(), message.getMiddleBank(), 3);
+            paths = agentBankRepository.retrieve(message.getOurBankBic(), message.getMiddleBank(), 3);
         }
         //使用Lambda表达式，根据权值排序
         paths.sort((path1, path2) -> {

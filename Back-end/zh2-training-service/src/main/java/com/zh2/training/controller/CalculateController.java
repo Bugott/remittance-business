@@ -31,16 +31,22 @@ public class CalculateController {
 
     @PostMapping(path = "/calculate")
     public ModelMap calculate(@RequestBody String messageStr) {
-//        String messageStr = request.getParameter("message");
         //初始化结果列表
         ModelMap modelMap = new ModelMap();
         //调用服务拆分报文
 //        Message message = messageHandleService.analyse(messageStr);
-        Message message = new Message();
-        message.setOurBankBiccode("ICBKCNBJ370");
-        message.setMiddleBank("INGBHOAM100");
-        message.setSourceBankBiccode("SCBLAUCA150");
-        message.setAimBank("KODBKRSE370");
+        Message message = messageHandleService.analyse("{1:F01ICBKCNBJ13700001161255}{2:O1031924200721KODBKRSE237000012007212007211924N}{4:\n" +
+                ":20:CWHZ202007211924\n" +
+                ":23B:CRED\n" +
+                ":50K:/1234\n" +
+                "SMITH,BEIJING\n" +
+                ":52A:BNPAFRPA110\n" +
+                ":56A:INGBHOAM100\n" +
+                ":57A:CHASBRBR160\n" +
+                ":59:/2224\n" +
+                "POLLY,HONGKONG\n" +
+                ":71A:OUR\n" +
+                "}");
         //调用服务获取排序后的汇款清算路径
         ArrayList<ArrayList<ArrayList<String>>> paths = msgPathCalculateService.calculate(message);
         //循环获取前3条路径
@@ -53,13 +59,13 @@ public class CalculateController {
 
             //拼接来报行信息到路径信息中
             ArrayList<String> sourceBank = new ArrayList<>(2);
-            sourceBank.add(bankRepository.getBankByBic(message.getSourceBankBiccode()).getCity());
-            sourceBank.add(message.getSourceBankBiccode());
+            sourceBank.add(bankRepository.getBankByBic(message.getSourceBankBic()).getCity());
+            sourceBank.add(message.getSourceBankBic());
             finalPath.put("sourceBank",sourceBank);
             //拼接我行信息到路径信息中
             ArrayList<String> ourBank = new ArrayList<>(2);
-            ourBank.add(bankRepository.getBankByBic(message.getOurBankBiccode()).getCity());
-            ourBank.add(message.getOurBankBiccode());
+            ourBank.add(bankRepository.getBankByBic(message.getOurBankBic()).getCity());
+            ourBank.add(message.getOurBankBic());
             finalPath.put("ourBank",ourBank);
             for (int j = 0; j < path.size()-1; j++) {
                 finalPath.put("agentBank_"+(j+1),path.get(j));
