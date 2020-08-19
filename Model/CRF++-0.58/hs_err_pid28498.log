@@ -1,0 +1,501 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fbcd6267b47, pid=28498, tid=0x00007fbceeff7700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_211-b12) (build 1.8.0_211-b12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.211-b12 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libcrfpp.so.0+0x3db47]  CRFPP::TaggerImpl::next()+0x47
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fbce800c000):  JavaThread "main" [_thread_in_native, id=28502, stack(0x00007fbceeef7000,0x00007fbceeff8000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000008
+
+Registers:
+RAX=0x00007fbceeff6890, RBX=0x00007fbce800c1f8, RCX=0x00007fbceeff6970, RDX=0x00007fbce816c950
+RSP=0x00007fbceeff6860, RBP=0x03f8000000000000, RSI=0x00007fbceeff6960, RDI=0x00007fbce816c950
+R8 =0x0000000000000004, R9 =0x0000000000000005, R10=0x00007fbcd8dfc63b, R11=0x00007fbceddcace0
+R12=0x0000000000000000, R13=0x0000000000000000, R14=0x00007fbceeff6980, R15=0x00007fbce816c950
+RIP=0x00007fbcd6267b47, EFLAGS=0x0000000000010246, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fbceeff6860)
+0x00007fbceeff6860:   00007fbcd8533838 00007fbce800c000
+0x00007fbceeff6870:   00007fbceeff68d0 00007fbceda8bdc8
+0x00007fbceeff6880:   00007fbceeff68c0 00007fbceeff6890
+0x00007fbceeff6890:   00007fbcd8533838 225c09b1fbf46400
+0x00007fbceeff68a0:   00007fbcd8533838 00007fbce800c1f8
+0x00007fbceeff68b0:   00007fbceeff6950 0000000000000000
+0x00007fbceeff68c0:   00007fbcd8533838 00007fbceeff6980
+0x00007fbceeff68d0:   00007fbce800c000 00007fbcd6495e80
+0x00007fbceeff68e0:   00007fbcd8533838 00007fbcd8dfc667
+0x00007fbceeff68f0:   00007fbceeff6950 00007fbcd8dfc3b9
+0x00007fbceeff6900:   fffffffe00000000 00007fbcd8dfc382
+0x00007fbceeff6910:   00007fbceeff6910 00007fbcd8533838
+0x00007fbceeff6920:   00007fbceeff6980 00007fbcd8533b98
+0x00007fbceeff6930:   0000000000000000 00007fbcd8533838
+0x00007fbceeff6940:   0000000000000000 00007fbceeff6970
+0x00007fbceeff6950:   00007fbceeff69c8 00007fbcd8deba90
+0x00007fbceeff6960:   00000000e1129d50 00007fbcd8df5d00
+0x00007fbceeff6970:   00000000e1126538 00007fbce816c950
+0x00007fbceeff6980:   00000000e1126538 00007fbceeff6988
+0x00007fbceeff6990:   00007fbcd85313d5 00007fbceeff69d8
+0x00007fbceeff69a0:   00007fbcd8531660 0000000000000000
+0x00007fbceeff69b0:   00007fbcd85313f0 00007fbceeff6970
+0x00007fbceeff69c0:   00007fbceeff69d8 00007fbceeff6a20
+0x00007fbceeff69d0:   00007fbcd8deba90 00000000e1126538
+0x00007fbceeff69e0:   00007fbceeff69e0 00007fbcd852e225
+0x00007fbceeff69f0:   00007fbceeff6a48 00007fbcd852e478
+0x00007fbceeff6a00:   0000000000000000 00007fbcd852e2f8
+0x00007fbceeff6a10:   00007fbceeff69d8 00007fbceeff6a48
+0x00007fbceeff6a20:   00007fbceeff6ab0 00007fbcd8de47a7
+0x00007fbceeff6a30:   0000000000000000 0000000000000000
+0x00007fbceeff6a40:   00000000e1126538 00000000e1120020
+0x00007fbceeff6a50:   00007fbc00001fa0 00007fbcd852e2f8 
+
+Instructions: (pc=0x00007fbcd6267b47)
+0x00007fbcd6267b27:   24 38 31 c0 48 8d 44 24 30 f2 0f 10 15 b8 4e 00
+0x00007fbcd6267b37:   00 48 89 44 24 28 0f 1f 00 4d 8b af 88 02 00 00
+0x00007fbcd6267b47:   49 8b 45 08 49 8b 7d 00 48 39 c7 0f 84 da 02 00
+0x00007fbcd6267b57:   00 48 89 c2 4c 8b 37 48 29 fa 48 83 fa 0f 7e 30 
+
+Register to memory mapping:
+
+RAX=0x00007fbceeff6890 is pointing into the stack for thread: 0x00007fbce800c000
+RBX=0x00007fbce800c1f8 is an unknown value
+RCX=0x00007fbceeff6970 is pointing into the stack for thread: 0x00007fbce800c000
+RDX=0x00007fbce816c950 is an unknown value
+RSP=0x00007fbceeff6860 is pointing into the stack for thread: 0x00007fbce800c000
+RBP=0x03f8000000000000 is an unknown value
+RSI=0x00007fbceeff6960 is pointing into the stack for thread: 0x00007fbce800c000
+RDI=0x00007fbce816c950 is an unknown value
+R8 =0x0000000000000004 is an unknown value
+R9 =0x0000000000000005 is an unknown value
+R10=0x00007fbcd8dfc63b is at code_begin+859 in an Interpreter codelet
+method entry point (kind = native)  [0x00007fbcd8dfc2e0, 0x00007fbcd8dfcc40]  2400 bytes
+R11=0x00007fbceddcace0: <offset 0x9bfce0> in /home/python/pu/jdk1.8.0_211/jre/lib/amd64/server/libjvm.so at 0x00007fbced40b000
+R12=0x0000000000000000 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00007fbceeff6980 is pointing into the stack for thread: 0x00007fbce800c000
+R15=0x00007fbce816c950 is an unknown value
+
+
+Stack: [0x00007fbceeef7000,0x00007fbceeff8000],  sp=0x00007fbceeff6860,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libcrfpp.so.0+0x3db47]  CRFPP::TaggerImpl::next()+0x47
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.chasen.crfpp.CRFPPJNI.Tagger_next(JLorg/chasen/crfpp/Tagger;)Z+0
+j  org.chasen.crfpp.Tagger.next()Z+5
+j  org.chasen.crfpp.test.main([Ljava/lang/String;)V+461
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fbce814e000 JavaThread "Service Thread" daemon [_thread_blocked, id=28520, stack(0x00007fbcd679a000,0x00007fbcd689b000)]
+  0x00007fbce814a800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=28519, stack(0x00007fbcd689b000,0x00007fbcd699c000)]
+  0x00007fbce8148800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=28518, stack(0x00007fbcd6eb4000,0x00007fbcd6fb5000)]
+  0x00007fbce8147000 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=28517, stack(0x00007fbcd6fb5000,0x00007fbcd70b6000)]
+  0x00007fbce80d7000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=28512, stack(0x00007fbcd70c9000,0x00007fbcd71ca000)]
+  0x00007fbce80a4000 JavaThread "Finalizer" daemon [_thread_blocked, id=28508, stack(0x00007fbcd7b89000,0x00007fbcd7c8a000)]
+  0x00007fbce80a1800 JavaThread "Reference Handler" daemon [_thread_blocked, id=28505, stack(0x00007fbcd7c8a000,0x00007fbcd7d8b000)]
+=>0x00007fbce800c000 JavaThread "main" [_thread_in_native, id=28502, stack(0x00007fbceeef7000,0x00007fbceeff8000)]
+
+Other Threads:
+  0x00007fbce8098000 VMThread [stack: 0x00007fbcd7d8b000,0x00007fbcd7e8c000] [id=28504]
+  0x00007fbce8151000 WatcherThread [stack: 0x00007fbcd6699000,0x00007fbcd679a000] [id=28521]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000e1000000, size: 496 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ def new generation   total 9792K, used 1809K [0x00000000e1000000, 0x00000000e1aa0000, 0x00000000eb550000)
+  eden space 8704K,  20% used [0x00000000e1000000, 0x00000000e11c4500, 0x00000000e1880000)
+  from space 1088K,   0% used [0x00000000e1880000, 0x00000000e1880000, 0x00000000e1990000)
+  to   space 1088K,   0% used [0x00000000e1990000, 0x00000000e1990000, 0x00000000e1aa0000)
+ tenured generation   total 21888K, used 0K [0x00000000eb550000, 0x00000000ecab0000, 0x0000000100000000)
+   the space 21888K,   0% used [0x00000000eb550000, 0x00000000eb550000, 0x00000000eb550200, 0x00000000ecab0000)
+ Metaspace       used 3090K, capacity 4564K, committed 4864K, reserved 1056768K
+  class space    used 336K, capacity 388K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00007fbcd892b000,0x00007fbcd8a24000] byte_map_base: 0x00007fbcd8223000
+
+Polling page: 0x00007fbcef018000
+
+CodeCache: size=245760Kb used=1127Kb max_used=1127Kb free=244632Kb
+ bounds [0x00007fbcd8de4000, 0x00007fbcd9054000, 0x00007fbce7de4000]
+ total_blobs=296 nmethods=35 adapters=176
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.424 Thread 0x00007fbce814a800   31       3       sun.misc.FDBigInteger::mult (64 bytes)
+Event: 0.424 Thread 0x00007fbce814a800 nmethod 31 0x00007fbcd8efc650 code [0x00007fbcd8efc7c0, 0x00007fbcd8efca50]
+Event: 0.424 Thread 0x00007fbce814a800   32       3       sun.misc.FDBigInteger::<init> (30 bytes)
+Event: 0.424 Thread 0x00007fbce814a800 nmethod 32 0x00007fbcd8efcd10 code [0x00007fbcd8efce80, 0x00007fbcd8efd080]
+Event: 0.424 Thread 0x00007fbce814a800   33       3       sun.misc.FDBigInteger::trimLeadingZeros (57 bytes)
+Event: 0.424 Thread 0x00007fbce814a800 nmethod 33 0x00007fbcd8efd190 code [0x00007fbcd8efd300, 0x00007fbcd8efd630]
+Event: 0.424 Thread 0x00007fbce814a800   34       3       sun.misc.FDBigInteger::makeImmutable (6 bytes)
+Event: 0.424 Thread 0x00007fbce814a800 nmethod 34 0x00007fbcd8efd750 code [0x00007fbcd8efd8a0, 0x00007fbcd8efd9f0]
+Event: 0.424 Thread 0x00007fbce814a800   35       3       sun.misc.FDBigInteger::mult (44 bytes)
+Event: 0.424 Thread 0x00007fbce814a800 nmethod 35 0x00007fbcd8efda50 code [0x00007fbcd8efdbe0, 0x00007fbcd8efdef0]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.080 Thread 0x00007fbce800c000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000e1007cb0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u211/12973/hotspot/src/sh
+Event: 0.080 Thread 0x00007fbce800c000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000e1007f98) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u211/12973/hotspot/src/share/vm/prims/jni.c
+
+Events (10 events):
+Event: 0.418 loading class sun/misc/FloatingDecimal$BinaryToASCIIBuffer
+Event: 0.418 loading class sun/misc/FloatingDecimal$BinaryToASCIIBuffer done
+Event: 0.418 loading class sun/misc/FloatingDecimal$1
+Event: 0.418 loading class sun/misc/FloatingDecimal$1 done
+Event: 0.418 loading class sun/misc/FloatingDecimal$PreparedASCIIToBinaryBuffer
+Event: 0.418 loading class sun/misc/FloatingDecimal$ASCIIToBinaryConverter
+Event: 0.418 loading class sun/misc/FloatingDecimal$ASCIIToBinaryConverter done
+Event: 0.418 loading class sun/misc/FloatingDecimal$PreparedASCIIToBinaryBuffer done
+Event: 0.418 loading class sun/misc/FDBigInteger
+Event: 0.418 loading class sun/misc/FDBigInteger done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 15999                              /home/python/pu/jdk1.8.0_211/bin/java
+00600000-00601000 r--p 00000000 08:01 15999                              /home/python/pu/jdk1.8.0_211/bin/java
+00601000-00602000 rw-p 00001000 08:01 15999                              /home/python/pu/jdk1.8.0_211/bin/java
+00adc000-00afd000 rw-p 00000000 00:00 0                                  [heap]
+e1000000-e1aa0000 rw-p 00000000 00:00 0 
+e1aa0000-eb550000 ---p 00000000 00:00 0 
+eb550000-ecab0000 rw-p 00000000 00:00 0 
+ecab0000-100000000 ---p 00000000 00:00 0 
+100000000-100080000 rw-p 00000000 00:00 0 
+100080000-140000000 ---p 00000000 00:00 0 
+7fbcb8000000-7fbcb805f000 rw-p 00000000 00:00 0 
+7fbcb805f000-7fbcbc000000 ---p 00000000 00:00 0 
+7fbcbc000000-7fbcbc02e000 rw-p 00000000 00:00 0 
+7fbcbc02e000-7fbcc0000000 ---p 00000000 00:00 0 
+7fbcc0000000-7fbcc0021000 rw-p 00000000 00:00 0 
+7fbcc0021000-7fbcc4000000 ---p 00000000 00:00 0 
+7fbcc4000000-7fbcc4021000 rw-p 00000000 00:00 0 
+7fbcc4021000-7fbcc8000000 ---p 00000000 00:00 0 
+7fbcc8000000-7fbcc8021000 rw-p 00000000 00:00 0 
+7fbcc8021000-7fbccc000000 ---p 00000000 00:00 0 
+7fbccc000000-7fbccc021000 rw-p 00000000 00:00 0 
+7fbccc021000-7fbcd0000000 ---p 00000000 00:00 0 
+7fbcd0000000-7fbcd0021000 rw-p 00000000 00:00 0 
+7fbcd0021000-7fbcd4000000 ---p 00000000 00:00 0 
+7fbcd5b84000-7fbcd5c92000 r--s 00000000 08:01 660552                     /home/python/Desktop/CRF++-0.58/example/chunking/model
+7fbcd5c92000-7fbcd5ca8000 r-xp 00000000 08:01 791889                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcd5ca8000-7fbcd5ea7000 ---p 00016000 08:01 791889                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcd5ea7000-7fbcd5ea8000 rw-p 00015000 08:01 791889                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcd5ea8000-7fbcd601a000 r-xp 00000000 08:01 1181460                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fbcd601a000-7fbcd621a000 ---p 00172000 08:01 1181460                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fbcd621a000-7fbcd6224000 r--p 00172000 08:01 1181460                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fbcd6224000-7fbcd6226000 rw-p 0017c000 08:01 1181460                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fbcd6226000-7fbcd622a000 rw-p 00000000 00:00 0 
+7fbcd622a000-7fbcd6274000 r-xp 00000000 08:01 1181458                    /usr/local/lib/libcrfpp.so.0.0.0
+7fbcd6274000-7fbcd6474000 ---p 0004a000 08:01 1181458                    /usr/local/lib/libcrfpp.so.0.0.0
+7fbcd6474000-7fbcd6475000 r--p 0004a000 08:01 1181458                    /usr/local/lib/libcrfpp.so.0.0.0
+7fbcd6475000-7fbcd6476000 rw-p 0004b000 08:01 1181458                    /usr/local/lib/libcrfpp.so.0.0.0
+7fbcd6493000-7fbcd6498000 r-xp 00000000 08:01 1185339                    /usr/lib/libCRFPP.so
+7fbcd6498000-7fbcd6697000 ---p 00005000 08:01 1185339                    /usr/lib/libCRFPP.so
+7fbcd6697000-7fbcd6698000 r--p 00004000 08:01 1185339                    /usr/lib/libCRFPP.so
+7fbcd6698000-7fbcd6699000 rw-p 00005000 08:01 1185339                    /usr/lib/libCRFPP.so
+7fbcd6699000-7fbcd669a000 ---p 00000000 00:00 0 
+7fbcd669a000-7fbcd679a000 rw-p 00000000 00:00 0 
+7fbcd679a000-7fbcd679d000 ---p 00000000 00:00 0 
+7fbcd679d000-7fbcd689b000 rw-p 00000000 00:00 0 
+7fbcd689b000-7fbcd689e000 ---p 00000000 00:00 0 
+7fbcd689e000-7fbcd6c9d000 rw-p 00000000 00:00 0 
+7fbcd6c9d000-7fbcd6cb3000 r-xp 00000000 08:01 16309                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libnet.so
+7fbcd6cb3000-7fbcd6eb2000 ---p 00016000 08:01 16309                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libnet.so
+7fbcd6eb2000-7fbcd6eb3000 r--p 00015000 08:01 16309                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libnet.so
+7fbcd6eb3000-7fbcd6eb4000 rw-p 00016000 08:01 16309                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libnet.so
+7fbcd6eb4000-7fbcd6eb7000 ---p 00000000 00:00 0 
+7fbcd6eb7000-7fbcd6fb5000 rw-p 00000000 00:00 0 
+7fbcd6fb5000-7fbcd6fb8000 ---p 00000000 00:00 0 
+7fbcd6fb8000-7fbcd70b6000 rw-p 00000000 00:00 0 
+7fbcd70b6000-7fbcd70c9000 r--s 00345000 08:01 16180                      /home/python/pu/jdk1.8.0_211/jre/lib/resources.jar
+7fbcd70c9000-7fbcd70cc000 ---p 00000000 00:00 0 
+7fbcd70cc000-7fbcd71ca000 rw-p 00000000 00:00 0 
+7fbcd71ca000-7fbcd7b89000 r--p 00000000 08:01 1188983                    /usr/lib/locale/locale-archive
+7fbcd7b89000-7fbcd7b8c000 ---p 00000000 00:00 0 
+7fbcd7b8c000-7fbcd7c8a000 rw-p 00000000 00:00 0 
+7fbcd7c8a000-7fbcd7c8d000 ---p 00000000 00:00 0 
+7fbcd7c8d000-7fbcd7d8b000 rw-p 00000000 00:00 0 
+7fbcd7d8b000-7fbcd7d8c000 ---p 00000000 00:00 0 
+7fbcd7d8c000-7fbcd7edb000 rw-p 00000000 00:00 0 
+7fbcd7edb000-7fbcd80b5000 r--s 03d6d000 08:01 16058                      /home/python/pu/jdk1.8.0_211/jre/lib/rt.jar
+7fbcd80b5000-7fbcd856b000 rw-p 00000000 00:00 0 
+7fbcd856b000-7fbcd892b000 ---p 00000000 00:00 0 
+7fbcd892b000-7fbcd8931000 rw-p 00000000 00:00 0 
+7fbcd8931000-7fbcd897d000 ---p 00000000 00:00 0 
+7fbcd897d000-7fbcd8989000 rw-p 00000000 00:00 0 
+7fbcd8989000-7fbcd8a23000 ---p 00000000 00:00 0 
+7fbcd8a23000-7fbcd8a2e000 rw-p 00000000 00:00 0 
+7fbcd8a2e000-7fbcd8de4000 ---p 00000000 00:00 0 
+7fbcd8de4000-7fbcd9054000 rwxp 00000000 00:00 0 
+7fbcd9054000-7fbce7de4000 ---p 00000000 00:00 0 
+7fbce7de4000-7fbce7dff000 r-xp 00000000 08:01 16332                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libzip.so
+7fbce7dff000-7fbce7ffe000 ---p 0001b000 08:01 16332                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libzip.so
+7fbce7ffe000-7fbce7fff000 r--p 0001a000 08:01 16332                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libzip.so
+7fbce7fff000-7fbce8000000 rw-p 0001b000 08:01 16332                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libzip.so
+7fbce8000000-7fbce8184000 rw-p 00000000 00:00 0 
+7fbce8184000-7fbcec000000 ---p 00000000 00:00 0 
+7fbcec003000-7fbcec016000 r--s 000d6000 08:01 16052                      /home/python/pu/jdk1.8.0_211/jre/lib/plugin.jar
+7fbcec016000-7fbcec071000 rw-p 00000000 00:00 0 
+7fbcec071000-7fbcec07c000 r-xp 00000000 08:01 791950                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fbcec07c000-7fbcec27b000 ---p 0000b000 08:01 791950                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fbcec27b000-7fbcec27c000 r--p 0000a000 08:01 791950                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fbcec27c000-7fbcec27d000 rw-p 0000b000 08:01 791950                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fbcec27d000-7fbcec283000 rw-p 00000000 00:00 0 
+7fbcec283000-7fbcec28e000 r-xp 00000000 08:01 791960                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fbcec28e000-7fbcec48d000 ---p 0000b000 08:01 791960                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fbcec48d000-7fbcec48e000 r--p 0000a000 08:01 791960                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fbcec48e000-7fbcec48f000 rw-p 0000b000 08:01 791960                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fbcec48f000-7fbcec4a5000 r-xp 00000000 08:01 791944                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fbcec4a5000-7fbcec6a4000 ---p 00016000 08:01 791944                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fbcec6a4000-7fbcec6a5000 r--p 00015000 08:01 791944                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fbcec6a5000-7fbcec6a6000 rw-p 00016000 08:01 791944                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fbcec6a6000-7fbcec6a8000 rw-p 00000000 00:00 0 
+7fbcec6a8000-7fbcec6b0000 r-xp 00000000 08:01 791946                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fbcec6b0000-7fbcec8af000 ---p 00008000 08:01 791946                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fbcec8af000-7fbcec8b0000 r--p 00007000 08:01 791946                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fbcec8b0000-7fbcec8b1000 rw-p 00008000 08:01 791946                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fbcec8b1000-7fbcec8bb000 r-xp 00000000 08:01 16334                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libinstrument.so
+7fbcec8bb000-7fbcecaba000 ---p 0000a000 08:01 16334                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libinstrument.so
+7fbcecaba000-7fbcecabb000 r--p 00009000 08:01 16334                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libinstrument.so
+7fbcecabb000-7fbcecabc000 rw-p 0000a000 08:01 16334                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libinstrument.so
+7fbcecabc000-7fbcecae8000 r-xp 00000000 08:01 16323                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libjava.so
+7fbcecae8000-7fbcecce8000 ---p 0002c000 08:01 16323                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libjava.so
+7fbcecce8000-7fbcecce9000 r--p 0002c000 08:01 16323                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libjava.so
+7fbcecce9000-7fbcecceb000 rw-p 0002d000 08:01 16323                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libjava.so
+7fbcecceb000-7fbceccf8000 r-xp 00000000 08:01 16314                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libverify.so
+7fbceccf8000-7fbcecef7000 ---p 0000d000 08:01 16314                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libverify.so
+7fbcecef7000-7fbcecef9000 r--p 0000c000 08:01 16314                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libverify.so
+7fbcecef9000-7fbcecefa000 rw-p 0000e000 08:01 16314                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/libverify.so
+7fbcecefa000-7fbcecf01000 r-xp 00000000 08:01 792005                     /lib/x86_64-linux-gnu/librt-2.23.so
+7fbcecf01000-7fbced100000 ---p 00007000 08:01 792005                     /lib/x86_64-linux-gnu/librt-2.23.so
+7fbced100000-7fbced101000 r--p 00006000 08:01 792005                     /lib/x86_64-linux-gnu/librt-2.23.so
+7fbced101000-7fbced102000 rw-p 00007000 08:01 792005                     /lib/x86_64-linux-gnu/librt-2.23.so
+7fbced102000-7fbced20a000 r-xp 00000000 08:01 791921                     /lib/x86_64-linux-gnu/libm-2.23.so
+7fbced20a000-7fbced409000 ---p 00108000 08:01 791921                     /lib/x86_64-linux-gnu/libm-2.23.so
+7fbced409000-7fbced40a000 r--p 00107000 08:01 791921                     /lib/x86_64-linux-gnu/libm-2.23.so
+7fbced40a000-7fbced40b000 rw-p 00108000 08:01 791921                     /lib/x86_64-linux-gnu/libm-2.23.so
+7fbced40b000-7fbcee0f3000 r-xp 00000000 08:01 16330                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/server/libjvm.so
+7fbcee0f3000-7fbcee2f2000 ---p 00ce8000 08:01 16330                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/server/libjvm.so
+7fbcee2f2000-7fbcee388000 r--p 00ce7000 08:01 16330                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/server/libjvm.so
+7fbcee388000-7fbcee3b9000 rw-p 00d7d000 08:01 16330                      /home/python/pu/jdk1.8.0_211/jre/lib/amd64/server/libjvm.so
+7fbcee3b9000-7fbcee3f4000 rw-p 00000000 00:00 0 
+7fbcee3f4000-7fbcee5b4000 r-xp 00000000 08:01 791851                     /lib/x86_64-linux-gnu/libc-2.23.so
+7fbcee5b4000-7fbcee7b3000 ---p 001c0000 08:01 791851                     /lib/x86_64-linux-gnu/libc-2.23.so
+7fbcee7b3000-7fbcee7b7000 r--p 001bf000 08:01 791851                     /lib/x86_64-linux-gnu/libc-2.23.so
+7fbcee7b7000-7fbcee7b9000 rw-p 001c3000 08:01 791851                     /lib/x86_64-linux-gnu/libc-2.23.so
+7fbcee7b9000-7fbcee7bd000 rw-p 00000000 00:00 0 
+7fbcee7bd000-7fbcee7c0000 r-xp 00000000 08:01 791875                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7fbcee7c0000-7fbcee9bf000 ---p 00003000 08:01 791875                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7fbcee9bf000-7fbcee9c0000 r--p 00002000 08:01 791875                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7fbcee9c0000-7fbcee9c1000 rw-p 00003000 08:01 791875                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7fbcee9c1000-7fbcee9d8000 r-xp 00000000 08:01 935573                     /home/python/pu/jdk1.8.0_211/lib/amd64/jli/libjli.so
+7fbcee9d8000-7fbceebd7000 ---p 00017000 08:01 935573                     /home/python/pu/jdk1.8.0_211/lib/amd64/jli/libjli.so
+7fbceebd7000-7fbceebd8000 r--p 00016000 08:01 935573                     /home/python/pu/jdk1.8.0_211/lib/amd64/jli/libjli.so
+7fbceebd8000-7fbceebd9000 rw-p 00017000 08:01 935573                     /home/python/pu/jdk1.8.0_211/lib/amd64/jli/libjli.so
+7fbceebd9000-7fbceebf1000 r-xp 00000000 08:01 791997                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fbceebf1000-7fbceedf0000 ---p 00018000 08:01 791997                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fbceedf0000-7fbceedf1000 r--p 00017000 08:01 791997                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fbceedf1000-7fbceedf2000 rw-p 00018000 08:01 791997                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fbceedf2000-7fbceedf6000 rw-p 00000000 00:00 0 
+7fbceedf6000-7fbceee1c000 r-xp 00000000 08:01 791823                     /lib/x86_64-linux-gnu/ld-2.23.so
+7fbceee24000-7fbceee26000 r--s 0001d000 08:01 655694                     /home/python/Downloads/idea-IC-202.6397.94/lib/idea_rt.jar
+7fbceee26000-7fbceee2a000 r--s 01556000 08:01 535385                     /home/python/Desktop/ansj_seg-5.1.6.jar
+7fbceee2a000-7fbceee2f000 r--s 000a3000 08:01 16267                      /home/python/pu/jdk1.8.0_211/jre/lib/jsse.jar
+7fbceee2f000-7fbceee31000 r--s 00007000 08:01 16272                      /home/python/pu/jdk1.8.0_211/jre/lib/jfxswt.jar
+7fbceee31000-7fbceee36000 r--s 00084000 08:01 16245                      /home/python/pu/jdk1.8.0_211/jre/lib/jfr.jar
+7fbceee36000-7fbceee51000 r--s 0020c000 08:01 16053                      /home/python/pu/jdk1.8.0_211/jre/lib/deploy.jar
+7fbceee51000-7fbceee5c000 rw-p 00000000 00:00 0 
+7fbceee5c000-7fbceeef7000 ---p 00000000 00:00 0 
+7fbceeef7000-7fbceeefa000 ---p 00000000 00:00 0 
+7fbceeefa000-7fbceeffc000 rw-p 00000000 00:00 0 
+7fbceeffc000-7fbceeffd000 r--s 00000000 08:01 16303                      /home/python/pu/jdk1.8.0_211/jre/lib/management-agent.jar
+7fbceeffd000-7fbcef000000 r--s 0001a000 08:01 16148                      /home/python/pu/jdk1.8.0_211/jre/lib/jce.jar
+7fbcef000000-7fbcef00a000 r--s 0006e000 08:01 16184                      /home/python/pu/jdk1.8.0_211/jre/lib/javaws.jar
+7fbcef00a000-7fbcef00f000 r--s 002f9000 08:01 16057                      /home/python/pu/jdk1.8.0_211/jre/lib/charsets.jar
+7fbcef00f000-7fbcef017000 rw-s 00000000 08:01 535543                     /tmp/hsperfdata_python/28498
+7fbcef017000-7fbcef018000 rw-p 00000000 00:00 0 
+7fbcef018000-7fbcef019000 r--p 00000000 00:00 0 
+7fbcef019000-7fbcef01b000 rw-p 00000000 00:00 0 
+7fbcef01b000-7fbcef01c000 r--p 00025000 08:01 791823                     /lib/x86_64-linux-gnu/ld-2.23.so
+7fbcef01c000-7fbcef01d000 rw-p 00026000 08:01 791823                     /lib/x86_64-linux-gnu/ld-2.23.so
+7fbcef01d000-7fbcef01e000 rw-p 00000000 00:00 0 
+7ffdb2f6c000-7ffdb2f8e000 rw-p 00000000 00:00 0                          [stack]
+7ffdb2fcb000-7ffdb2fcd000 r--p 00000000 00:00 0                          [vvar]
+7ffdb2fcd000-7ffdb2fcf000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -javaagent:/home/python/Downloads/idea-IC-202.6397.94/lib/idea_rt.jar=45957:/home/python/Downloads/idea-IC-202.6397.94/bin -Dfile.encoding=UTF-8 
+java_command: org.chasen.crfpp.test
+java_class_path (initial): /home/python/pu/jdk1.8.0_211/jre/lib/charsets.jar:/home/python/pu/jdk1.8.0_211/jre/lib/deploy.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/cldrdata.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/dnsns.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/jaccess.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/jfxrt.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/localedata.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/nashorn.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/sunec.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/sunjce_provider.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/sunpkcs11.jar:/home/python/pu/jdk1.8.0_211/jre/lib/ext/zipfs.jar:/home/python/pu/jdk1.8.0_211/jre/lib/javaws.jar:/home/python/pu/jdk1.8.0_211/jre/lib/jce.jar:/home/python/pu/jdk1.8.0_211/jre/lib/jfr.jar:/home/python/pu/jdk1.8.0_211/jre/lib/jfxswt.jar:/home/python/pu/jdk1.8.0_211/jre/lib/jsse.jar:/home/python/pu/jdk1.8.0_211/jre/lib/management-agent.jar:/home/python/pu/jdk1.8.0_211/jre/lib/plugin.jar:/home/python/pu/jdk1.8.0_211/jre/lib/resources.jar:/home/python/pu/jdk1.8.0_211/jre/lib/rt.jar:/home/python/IdeaProjects/test/out/production/Test:/home/python/Desktop/ansj_seg-5.1.6.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/home/python/pu/jdk1.8.0_211
+JRE_HOME=/home/python/pu/jdk1.8.0_211/jre
+CLASSPATH=/home/python/Downloads/idea-IC-202.6397.94/lib/bootstrap.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/extensions.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/util.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/jdom.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/log4j.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/trove4j.jar:/home/python/Downloads/idea-IC-202.6397.94/lib/jna.jar:/home/python/Downloads/idea-IC-202.6397.94/jbr/lib/tools.jar
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/python/pu/jdk1.8.0_211/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xad3d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xad3d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x90b8b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x90b8b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x90b8b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x90b8b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x90b780], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x90bda0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x90bda0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x90bda0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x90bda0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
+
+uname:Linux 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 7781, NOFILE 65536, AS infinity
+load average:2.03 2.07 1.33
+
+/proc/meminfo:
+MemTotal:        2030600 kB
+MemFree:          186492 kB
+MemAvailable:     231880 kB
+Buffers:            3548 kB
+Cached:           159436 kB
+SwapCached:       156964 kB
+Active:           954632 kB
+Inactive:         404252 kB
+Active(anon):     865352 kB
+Inactive(anon):   332128 kB
+Active(file):      89280 kB
+Inactive(file):    72124 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:       4192252 kB
+SwapFree:        2986756 kB
+Dirty:               544 kB
+Writeback:             0 kB
+AnonPages:       1190240 kB
+Mapped:           109224 kB
+Shmem:              1560 kB
+Slab:              81608 kB
+SReclaimable:      31176 kB
+SUnreclaim:        50432 kB
+KernelStack:       11632 kB
+PageTables:        36748 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5207552 kB
+Committed_AS:    5776616 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    618496 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      159616 kB
+DirectMap2M:     1937408 kB
+DirectMap1G:           0 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0
+cpu_memory_nodes: 0
+active_processor_count: 1
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 1386729472
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 1 (initial active 1) (1 cores per cpu, 1 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+stepping	: 9
+microcode	: 0x8e
+cpu MHz		: 3600.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid rdseed adx smap xsaveopt arat
+bugs		:
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 42 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2030600k(186492k free), swap 4192252k(2986756k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.211-b12) for linux-amd64 JRE (1.8.0_211-b12), built on Apr  1 2019 20:39:34 by "java_re" with gcc 7.3.0
+
+time: Mon Aug 10 21:11:24 2020
+timezone: CST
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
