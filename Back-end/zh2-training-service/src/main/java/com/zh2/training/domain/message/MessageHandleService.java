@@ -1,5 +1,6 @@
 package com.zh2.training.domain.message;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,10 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageHandleService {
 
-    Message message = new Message();
-    Creditor creditor = new Creditor() ;
-    Debitor debitor = new Debitor();
-
+    @Autowired
+    Message message;
+    @Autowired
+    Creditor creditor;
+    @Autowired
+    Debitor debitor;
 
     public Message analyse(String messageStr){
         Message message = Message.create(messageStr);//解析swift简电
