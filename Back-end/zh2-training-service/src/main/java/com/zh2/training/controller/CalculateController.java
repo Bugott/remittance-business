@@ -77,36 +77,3 @@ public class CalculateController {
         return modelMap;
     }
 }
-
-
-//{
-//        "cost":1,
-//        "Debitor":["Amsterdam",["Amy","AmyAddress","AmyAccount"]],
-//        "sourceBank":["Athens","AAAA"],
-//        "ourBank":["Beijing","ICBCBJ"],
-//        "agentBank_1":["Singapore","SSSSS"],
-//        "agentBank_2":["Sydney","SYSS"],
-//        "middleBank":["Vilnius","Vvvv"],
-//        "aimBank":["Munich","MMMMMM"],
-//        "Creditor":["Riga",["Reo","ReoAddress","ReoAccount"]]
-//        },
-//        {
-//        "cost":2,
-//        "Debitor":["Amsterdam",["Amy","AmyAddress","AmyAccount"]],
-//        "sourceBank":["Athens","AAAA"],
-//        "ourBank":["Beijing","ICBCBJ"],
-//        "agentBank_1":["Tokyo","TTTT"],
-//        "agentBank_2":["Berlin","BBBB"],
-//        "agentBank_3":["Vienna","VVVVV"],
-//        "aimBank":["Munich","MMMMMM"],
-//        "Creditor":["Riga",["Reo","ReoAddress","ReoAccount"]]
-//        },
-//        {
-//        "cost":3,
-//        "Debitor":["Amsterdam",["Amy","AmyAddress","AmyAccount"]],
-//        "sourceBank":["Athens","AAAA"],
-//        "ourBank":["Beijing","ICBCBJ"],
-//        "aimBankCustomer":["Munich","MMMMMM"],
-//        "Creditor":["Riga",["Reo","ReoAddress","ReoAccount"]]
-//        }
-//        ]
