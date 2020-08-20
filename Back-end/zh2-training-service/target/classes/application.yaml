@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+#    url: jdbc:mysql://10.2.1.219:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://113.106.111.75:6002/training?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Qwe@123456
+    type: com.alibaba.druid.pool.DruidDataSource
+server:
+  port: 9081
