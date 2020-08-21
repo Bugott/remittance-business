@@ -1,16 +1,23 @@
 package com.zh2.training.domain.message;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 
 /**
+ *报文简电对象
  * @author Phoenix
  *
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Repository
 public class Message implements Serializable {
     //我行BIC
     private String ourBankBic;
