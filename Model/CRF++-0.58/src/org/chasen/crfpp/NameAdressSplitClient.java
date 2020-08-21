@@ -8,13 +8,15 @@ import java.util.List;
 public class NameAdressSplitClient {
 
 
-//    public static void main(String[] argv) {
-//        System.out.println(split("/5803 Jack,BeiJing"));
-//    }
+    public static void main(String[] argv) {
+        System.out.println(split("/5803 Jack,BeiJing"));
+        System.out.println(split("/5803 Smith,Tokyo"));
+    }
 
     static {
         try {
-            System.loadLibrary("CRFPP");
+            System.loadLibrary("CRFPP_lib");
+
         } catch (UnsatisfiedLinkError e) {
             System.err.println("Cannot load the example native code.\nMake sure your LD_LIBRARY_PATH contains \'.\'\n" + e);
             System.exit(1);
@@ -23,7 +25,7 @@ public class NameAdressSplitClient {
 
     private static String split(String s) {
         List<String> word_list = cut_sentence(s);
-        Tagger tagger = new Tagger("-m /home/python/Desktop/CRF++-0.58/example/NameAddress/model -v 3 -n2");
+        Tagger tagger = new Tagger("-m C:/Users/吱吱吱吱/Desktop/CRF++-0.58/src/org/chasen/crfpp/model -v 3 -n2");
         tagger.clear();
         for (String word : word_list) {
             tagger.add(word + "\tB");
