@@ -28,6 +28,9 @@ public class CalculateController {
 
     @Autowired
     BankRepository bankRepository;
+    
+//    @Autowired
+//    NameAddressSplitClient nameAddressSplitClient;
 
     @PostMapping(path = "/calculate",consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     public ModelMap calculate(@RequestParam(value="message") String messageStr) {
@@ -43,8 +46,13 @@ public class CalculateController {
             ArrayList<ArrayList<String>> path = paths.get(i);
             //final为给前端的单条路径格式
             HashMap<String, List<String>> finalPath = new HashMap<>(16);
-            //TODO 在此拼接付款人信息
-
+            //在此拼接付款人信息
+//            String[] creditorInfo = nameAddressSplitClient.split(message.getCreditor().getCreditorInformation()).split(",");
+            String[] creditorInfo = {"Jack","Beijing"};
+            ArrayList<String> creditor = new ArrayList<>(2);
+            creditor.add(creditorInfo[1]);
+            creditor.add(creditorInfo[0]);
+            finalPath.put("Creditor", creditor);
             //拼接来报行信息到路径信息中
             ArrayList<String> sourceBank = new ArrayList<>(2);
             sourceBank.add(bankRepository.getBankByBic(message.getSourceBankBic()).getCity());
@@ -70,8 +78,13 @@ public class CalculateController {
             aimBank.add(bankRepository.getBankByBic(message.getAimBank()).getCity());
             aimBank.add(message.getAimBank());
             finalPath.put("aimBank",aimBank);
-            //TODO 在此拼接收款人信息
-
+            //拼接收款人信息
+//            String[] debitorInfo = nameAddressSplitClient.split(message.getDebitor().getDebitorInformation()).split(",");
+            String[] debitorInfo = {"Smith","Tokyo"};
+            ArrayList<String> debitor = new ArrayList<>(2);
+            debitor.add(debitorInfo[1]);
+            debitor.add(debitorInfo[0]);
+            finalPath.put("Debitor", debitor);
             modelMap.addAttribute(i+"",finalPath);
         }
         return modelMap;
