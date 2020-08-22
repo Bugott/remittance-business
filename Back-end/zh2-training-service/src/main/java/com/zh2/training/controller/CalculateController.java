@@ -20,11 +20,11 @@ import java.util.List;
 @RestController
 public class CalculateController {
 
-    @Autowired
-    MsgPathCalculateService msgPathCalculateService;
 
-    @Autowired
-    MessageHandleService messageHandleService;
+    MsgPathCalculateService msgPathCalculateService = new MsgPathCalculateService();
+
+
+    MessageHandleService messageHandleService = new MessageHandleService();
 
     @Autowired
     BankRepository bankRepository;

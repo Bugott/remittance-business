@@ -11,12 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageHandleService {
 
-    @Autowired
-    Message message;
-    @Autowired
-    Creditor creditor;
-    @Autowired
-    Debitor debitor;
+    Message message = new Message();
+    Creditor creditor = new Creditor();
+    Debitor debitor = new Debitor();
 
     public Message analyse(String messageStr){
         Message message = Message.create(messageStr);//解析swift简电
